@@ -77,14 +77,9 @@ app.use(errorHandler);
 app.use(express.static(path.join(__dirname, "public")));
 
 // Iniciar servidor local solamente
-app.listen(port, () => {
-  console.log(`Server corriendo en http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server corriendo en http://localhost:${port}`);
+// });
 
-
-//Iniciar servidor en Vercel o en local
-// if (process.env.NODE_ENV !== 'production') {
-//     app.listen(port, () => {
-//         console.log(`Server corriendo en http://localhost:${port}`);
-//     });
-// }
+// Exportar app para Vercel
+module.exports = app;
